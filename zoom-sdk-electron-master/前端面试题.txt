@@ -1,0 +1,75 @@
+//初级（鉴别有无实际工作经验）
+1. 如何防止表单重复提交？
+
+    答案：加一把锁，  当请求发出后，将锁关闭。 等待请求返回以后，在将锁打开。
+
+
+
+//中级（考察语言的理解能力）
+2.下面程序在控制台输出的结果，简要分析
+    var name = 'Mary'
+    function hello() {
+        console.log(`Hello!${name}`)
+    }
+    function sayHello() {
+        var name = 'Bob'
+        hello()
+    }
+    function sayHello1(){
+        var name = 'Mark'
+        function hello() {
+            console.log(`Hello!${name}`)
+        }
+        hello()
+    }
+    hello()
+    sayHello()
+    sayHello1()
+
+
+    答案：
+
+        hello()      输出 Hello Mary
+        sayHello()   输出 Hello Mary
+        sayHello1()  输出 Hello Mark
+
+
+
+//中高级（考察是否爱学习，   此题非每人都会，但是爱学习的人  可能会回答出来）
+2.  请描述一下你对于canvas 的认识， 请用canvas 画出一条直线。
+
+    答案：
+        用途：
+            canvas 用于绘制图像
+
+        代码：
+
+
+            var c=document.getElementById("myCanvas");
+
+            //获取环境
+            var ctx=c.getContext("2d");
+            ctx.beginPath();
+
+            //起始点
+            ctx.moveTo(0,0);
+
+            //结束点
+            ctx.lineTo(300,150);
+
+            //划线
+            ctx.stroke();
+
+
+
+
+
+
+
+
+
+// 高级
+3. 请描述一下我们一般是如何使用 nodeJS 里的process 模块。
+
+    我们用 process.argv  获取进程上的参数
+    我们用 process.env   获取进程上的环境对象

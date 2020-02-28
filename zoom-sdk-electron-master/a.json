@@ -1,0 +1,16 @@
+{
+  "type": "node",
+  "request": "launch",
+  "name": "调试未打包的mTool",
+  "runtimeExecutable": "${workspaceRoot}/mxj-desktop-app/node_modules/.bin/electron",
+  "windows": {
+    "runtimeExecutable": "${workspaceRoot}/mxj-desktop-app/node_modules/.bin/electron.cmd"
+  },
+  "env": {
+    "NODE_ENV": "development",
+    "NODE_DEBUG":"request"
+  },
+  "program": "${workspaceRoot}/mxj-desktop-app/dist/electron-main.js",
+  "protocol": "inspector",
+  "cwd": "${workspaceRoot}/mxj-desktop-app",
+},
